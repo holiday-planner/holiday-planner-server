@@ -1,9 +1,10 @@
-
 const router = require('express').Router();
-const routerHolidays = require('./holidays')
-const holidayController = require('../controllers/holiday');
+const routerHolidays = require('./holidays');
+const routerWeather = require('./weather');
+const routerEvents = require('./events')
 
-router.use('/holidays', routerHolidays)
-router.get('/weather', holidayController.getWeather);
+router.use('/holidays', routerHolidays);
+router.use('/weather', routerWeather);
+router.use('/events', routerEvents);
 
 module.exports = router;
