@@ -1,27 +1,22 @@
-if (process.env.NODE_ENV === 'development'){
+if (process.env.NODE_ENV === 'development') {
   require('dotenv').config()
 }
 
+const PORT = 3000
 const express = require('express')
 const app = express()
-const cors = require ('cors')
-// const routes = require('./routes')
+const cors = require('cors')
+const routes = require('./routes')
 // const errorHandler = require('./middlewares/errorHandler')
 
-app.use(express.urlencoded({extended: false}))
+app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 app.use(cors())
 
-// app.use('/', routes)
+app.use('/', routes)
 
 // app.use(errorHandler)
-app.get('/', (req, res) => {
-  res.send(process.env.COBA)
-})
 
-console.log(process.env.COBA)
-
-
-app.listen(process.env.PORT, () => {
-  console.log('Running on port', process.env.PORT)
+app.listen(PORT, () => {
+  console.log('Running on port', PORT)
 })
