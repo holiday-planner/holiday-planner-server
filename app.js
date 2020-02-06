@@ -2,7 +2,6 @@ if (process.env.NODE_ENV === 'development') {
   require('dotenv').config()
 }
 
-const PORT = 3000
 const express = require('express')
 const app = express()
 const cors = require('cors')
@@ -17,6 +16,6 @@ app.use('/', routes)
 
 // app.use(errorHandler)
 
-app.listen(PORT, () => {
-  console.log('Running on port', PORT)
+app.listen(process.env.PORT, () => {
+  console.log('Running on port', process.env.PORT)
 })
