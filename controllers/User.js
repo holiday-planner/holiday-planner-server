@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken')
 class UserController {
   static googleSign (req, res, next) {
     let payload
-    let status
+    let status = {}
     const client = new OAuth2Client(process.env.CLIENT_ID);
     client.verifyIdToken({
       idToken: req.body.id_token,
