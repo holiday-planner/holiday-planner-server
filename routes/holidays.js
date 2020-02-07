@@ -1,6 +1,6 @@
 const router = require('express').Router()
 const HolidaysController = require('../controllers/holidays');
 
-router.get('/', HolidaysController.getHolidays)
+router.post('/', HolidaysController.getHolidays)
 
 module.exports = router
